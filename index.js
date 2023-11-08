@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require("cors");
 // const path = require('path')
 
 // const PORT = 8000;
@@ -10,7 +11,10 @@ const PORT = process.env.PORT || 8000;
 
 // const PORT = process.env.REACT_APP_SRV_PORT;
 
+// Enable all requests
+app.use(cors());
 
+// parsing application/json
 app.use(express.json());
 app.use(require('./routes'));
 
